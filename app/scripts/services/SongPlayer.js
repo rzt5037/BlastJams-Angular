@@ -9,7 +9,7 @@
     var currentAlbum = Fixtures.getAlbum();
 
     /**
-    * @desc Buzz object audio file
+    * @desc Buzz object that contains reference to audio
     * @type {Object}
     */
     var currentBuzzObject = null;
