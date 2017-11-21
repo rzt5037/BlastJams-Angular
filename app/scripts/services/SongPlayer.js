@@ -67,6 +67,12 @@
     SongPlayer.currentTime = null;
 
     /**
+    *@desc Current volume (in percent)
+    *@type {Number}
+    */
+    SongPlayer.volume = null;
+
+    /**
     *@function
     *@desc If the song set to play is not the currently playing song, it sets and plays that song. Otherwise, plays the song if it is paused
     *@param {Object} song
@@ -128,12 +134,23 @@
 
     /**
     *@function setCurrentTime
-    *@desc Set current tiem (in seconds) of currently playing song
+    *@desc Set current time (in seconds) of currently playing song
     *@param {Number} time
     */
     SongPlayer.setCurrentTime = function(time){
       if (currentBuzzObject){
         currentBuzzObject.setTime(time);
+      }
+    };
+
+    /**
+    *@function setVolume
+    *@desc Set volume of current song
+    *@param {Number} volume
+    */
+    SongPlayer.setVolume = function(volume){
+      if (currentBuzzObject){
+        currentBuzzObject.setVolume(volume);
       }
     };
 
