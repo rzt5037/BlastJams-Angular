@@ -14,6 +14,8 @@
     */
     var currentBuzzObject = null;
 
+    SongPlayer.currentlyMuted = null;
+
     /**
     * @function setSong
     * @desc Stops currently playing song and loads new audio file as currentBuzzObject
@@ -70,7 +72,7 @@
     *@desc Current volume (in percent)
     *@type {Number}
     */
-    SongPlayer.volume = null;
+    SongPlayer.volume = 100;
 
     /**
     *@function
@@ -152,6 +154,11 @@
       if (currentBuzzObject){
         currentBuzzObject.setVolume(volume);
       }
+    };
+
+    SongPlayer.muteButton = function(){
+      currentBuzzObject.toggleMute();
+      SongPlayer.currentlyMuted = currentBuzzObject.isMuted();
     };
 
     return SongPlayer;

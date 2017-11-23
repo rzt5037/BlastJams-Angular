@@ -18,7 +18,7 @@
         onChange: '&'
       },
       link: function(scope, element, attributes){
-        scope.value=0;
+        scope.value=00;
         scope.max=100;
 
         var seekBar=$(element);
@@ -61,16 +61,16 @@
             });
           });
 
-          var notifyOnChange = function(newValue){
-            if(typeof scope.onChange === 'function'){
-              scope.onChange({value:newValue});
-            }
-          };
-
           $document.bind('mouseup.thumb',function(){
             $document.unbind('mousemove.thumb');
             $document.unbind('mouseup.thumb');
           });
+        };
+
+        var notifyOnChange = function(newValue){
+          if(typeof scope.onChange === 'function'){
+            scope.onChange({value:newValue});
+          }
         };
       }
     };
