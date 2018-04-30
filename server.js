@@ -2,11 +2,6 @@ const Hapi = require('hapi');
 const Inert = require('inert');
 const Path = require('path');
 
-// when on Heroku, port will be exported to an environment variable
-// and available as process.env.PORT
-var port = process.env.PORT || CONFIG.port;
-app.listen(port);
-
 let connection = {
     port: process.env.PORT || 3000,
     host: process.env.IP || 'localhost'
